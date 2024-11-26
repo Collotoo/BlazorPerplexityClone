@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+	<Target Name="Tailwind Transformer" Condition="'$(Configuration)'=='Release'" BeforeTargets="Build">
+		<Message Text="----------- Generating Tailwind CSS--------" Importance="high" />
+		<Exec Command="npx tailwindcss -i ./wwwroot/app.css -o ./wwwroot/tailwind.css" />
+	</Target>
+
+</Project>

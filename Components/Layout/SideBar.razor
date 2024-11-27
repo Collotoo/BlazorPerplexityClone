@@ -1,0 +1,182 @@
+﻿@using Microsoft.AspNetCore.Components.Web
+@rendermode InteractiveServer
+<div class="flex">
+    <div class="@($"fixed top-0 left-0 h-screen transition-all duration-300 {(IsCollapsed ? "w-24" : "w-60")} bg-gray-50")">
+        <!-- Logo Section -->
+        <div class="h-16 flex px-2">
+            @if (!IsCollapsed)
+            {                
+                <a href="/" class="flex items-center">
+                    <svg width="200" height="40" viewBox="0 0 1588 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M101.008 42L190.99 124.905V124.886V42.1913H208.506V125.276L298.891 42V136.524H336V272.866H299.005V357.035L208.506 277.525V357.948H190.99V278.836L101.11 358V272.866H64V136.524H101.008V42ZM177.785 153.826H81.5159V255.564H101.088V223.472L177.785 153.826ZM118.625 231.149V319.392L190.99 255.655V165.421L118.625 231.149ZM209.01 254.812V165.336L281.396 231.068V272.866H281.489V318.491L209.01 254.812ZM299.005 255.564H318.484V153.826H222.932L299.005 222.751V255.564ZM281.375 136.524V81.7983L221.977 136.524H281.375ZM177.921 136.524H118.524V81.7983L177.921 136.524Z" fill="black" />
+                        <path d="M768.761 134.448H779.882V157.366H765.486C754.204 157.366 745.79 160.08 740.213 165.524C734.669 170.951 731.881 179.877 731.881 192.284V267.432H709.153V134.971H731.881V156.108C731.881 157.301 732.481 157.89 733.648 157.89C734.313 157.89 734.815 157.726 735.172 157.383C735.528 157.039 735.836 156.369 736.193 155.339C740.57 141.428 751.448 134.464 768.777 134.464H768.761V134.448ZM919.945 162.843C925.911 173.452 928.91 186.236 928.91 201.177C928.91 216.118 925.927 228.902 919.945 239.511C913.963 250.121 906.214 258.065 896.698 263.329C887.183 268.593 876.953 271.225 866.011 271.225C844.45 271.225 829.293 262.561 820.539 245.233C819.874 243.876 819.015 243.189 818.01 243.189C817.005 243.189 816.486 243.696 816.486 244.726V315.804H793.758V134.954H816.486V157.628C816.486 158.641 816.989 159.165 818.01 159.165C819.031 159.165 819.858 158.494 820.539 157.121C829.293 139.793 844.45 131.129 866.011 131.129C876.953 131.129 887.183 133.761 896.698 139.025C906.214 144.289 913.947 152.233 919.945 162.843ZM906.198 201.177C906.198 185.549 902.032 173.37 893.699 164.625C885.367 155.879 874.392 151.514 860.726 151.514C847.06 151.514 836.085 155.895 827.753 164.625C819.404 173.37 816.357 185.565 816.357 201.177C816.357 216.789 819.42 228.984 827.753 237.729C836.085 246.492 847.076 250.84 860.726 250.84C874.376 250.84 885.367 246.459 893.699 237.729C902.032 229 906.198 216.789 906.198 201.177ZM537.17 163.039C543.136 173.648 546.135 186.432 546.135 201.373C546.135 216.315 543.152 229.098 537.17 239.707C531.188 250.317 523.44 258.262 513.924 263.525C504.408 268.789 494.179 271.421 483.236 271.421C461.676 271.421 446.518 262.757 437.764 245.429C437.1 244.072 436.241 243.386 435.235 243.386C434.23 243.386 433.712 243.892 433.712 244.922V316H411V135.151H433.728V157.824C433.728 158.838 434.23 159.361 435.252 159.361C436.273 159.361 437.1 158.691 437.781 157.317C446.535 139.989 461.692 131.325 483.253 131.325C494.195 131.325 504.424 133.957 513.94 139.221C523.456 144.485 531.189 152.43 537.187 163.039H537.17ZM523.407 201.373C523.407 185.745 519.241 173.567 510.909 164.821C502.576 156.091 491.585 151.71 477.935 151.71C464.286 151.71 453.295 156.091 444.962 164.821C436.63 173.583 433.566 185.762 433.566 201.373C433.566 216.985 436.63 229.18 444.962 237.926C453.295 246.688 464.269 251.036 477.935 251.036C491.601 251.036 502.576 246.655 510.909 237.926C519.241 229.196 523.407 216.985 523.407 201.373ZM668.982 225.355H692.975C689.781 237.762 683.248 248.502 673.408 257.575C663.551 266.664 649.448 271.192 631.081 271.192C617.269 271.192 605.111 268.348 594.59 262.659C584.069 256.97 575.947 248.878 570.208 238.334C564.47 227.807 561.617 215.415 561.617 201.144C561.617 186.873 564.405 174.482 569.949 163.954C575.493 153.427 583.291 145.318 593.309 139.63C603.328 133.941 615.064 131.096 628.536 131.096C642.007 131.096 653.176 133.908 662.514 139.499C671.868 145.106 678.838 152.544 683.475 161.78C688.111 171.049 690.413 181.184 690.413 192.219V207.503H585.593C586.419 220.745 590.861 231.289 598.853 239.086C606.845 246.9 617.593 250.807 631.065 250.807C642.007 250.807 650.404 248.568 656.208 244.056C662.011 239.544 666.259 233.316 668.966 225.322L668.982 225.355ZM648.217 215.717C646.738 214.205 644.243 213.449 640.739 213.449C637.235 213.449 634.74 214.205 633.261 215.717C631.819 217.227 631.07 219.443 631.07 222.368C631.07 225.015 631.957 227.171 633.676 228.493C635.394 229.832 637.879 230.449 640.064 230.449C642.619 230.449 644.964 229.778 646.674 228.283C648.385 226.787 649.081 224.56 649.081 221.628C649.081 219.005 648.307 217.171 648.217 215.717ZM766.163 320.837C769.253 310.679 775.526 301.905 785.305 294.419C795.083 286.943 808.727 281.921 825.936 279.321V300.332C812.991 302.303 798.27 306.14 788.531 310.66C778.791 315.178 771.396 321.895 766.163 330.908L766.163 320.837Z" fill="black" />
+                    </svg>
+                </a>
+                <!-- Collapse Button -->
+                <button @onclick="ToggleSidebar"
+                        class="absolute top-4 left-0 right-0 mx-auto w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-full relative group z-10">
+
+                    <svg class="w-4 h-4 transform group-hover:rotate-90 transition-all duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l-7 7 7 7" />
+                    </svg>
+                    <span class="absolute left-full ml-2 top-1/2 transform -translate-y-1/2 text-xs text-white bg-black rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Collapse
+                    </span>
+                </button>
+
+
+            }
+            else
+            {                
+                <a href="/" class="flex items-center">                    
+                    <svg width="200" height="40" viewBox="0 0 1588 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M101.008 42L190.99 124.905V124.886V42.1913H208.506V125.276L298.891 42V136.524H336V272.866H299.005V357.035L208.506 277.525V357.948H190.99V278.836L101.11 358V272.866H64V136.524H101.008V42ZM177.785 153.826H81.5159V255.564H101.088V223.472L177.785 153.826ZM118.625 231.149V319.392L190.99 255.655V165.421L118.625 231.149ZM209.01 254.812V165.336L281.396 231.068V272.866H281.489V318.491L209.01 254.812ZM299.005 255.564H318.484V153.826H222.932L299.005 222.751V255.564ZM281.375 136.524V81.7983L221.977 136.524H281.375ZM177.921 136.524H118.524V81.7983L177.921 136.524Z" fill="black" />
+                    </svg>
+                </a>
+            }
+
+        </div>
+
+        <!-- New Thread Button -->
+        <div class="px-4 py-3">
+            <button class="w-full px-3 py-1.5 text-sm bg-gray-100 rounded-full flex items-center gap-2">
+                @if (IsCollapsed)
+                {
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                }
+                else
+                {
+                    <span>New Thread</span>
+                    <div class="ml-auto flex items-center gap-1">
+                        <span class="text-xs text-gray-500 px-1 bg-gray-200 rounded">Ctrl</span>
+                        <span class="text-xs text-gray-500 px-1 bg-gray-200 rounded">I</span>
+                    </div>
+                }
+            </button>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="py-2">
+            <div class="space-y-1">
+                <NavLink href="/" class="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg mx-2" Match="NavLinkMatch.All">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                    @if (!IsCollapsed)
+                    {
+                        <span class="text-sm">Home</span>
+                    }
+                </NavLink>
+
+                <NavLink href="/discover" class="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg mx-2">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    @if (!IsCollapsed)
+                    {
+                        <span class="text-sm">Discover</span>
+                    }
+                </NavLink>
+
+                <NavLink href="/spaces" class="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg mx-2">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+                    </svg>
+                    @if (!IsCollapsed)
+                    {
+                        <span class="text-sm">Spaces</span>
+                    }
+                </NavLink>
+
+                <NavLink href="/library" class="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg mx-2">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    @if (!IsCollapsed)
+                    {
+                        <span class="text-sm">Library</span>
+                    }
+                </NavLink>
+            </div>
+        </nav>
+
+        <!-- Pro Section -->
+        <div class="absolute bottom-10 w-full px-4">
+            <div class="space-y-2">
+                @if (!IsCollapsed)
+                {
+                    <div class="text-sm text-gray-600 px-2">
+                        <div>Try Pro</div>
+                        <div class="text-xs text-gray-500">
+                            Upgrade for image upload, smarter AI, and more Pro Search.
+                        </div>
+                    </div>
+                    <a href="/pro" class="flex items-center gap-2 px-2 py-1 text-sm text-gray-700">
+                        <span>Learn More</span>
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                    <div class="flex bg-gradient items-center gap-4">
+                        <button class="hover:bg-gray-100 py-1 rounded-lg text-sm">Hi, Collo!</button>
+                        <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
+                            <img src="https://avatars.dicebear.com/api/initials/John%20Doe.svg"
+                                 alt="User avatar"
+                                 onerror="this.src='/api/placeholder/32/32'"
+                                 class="w-full h-full rounded-full" />
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <!-- Expand Button -->
+                    <button @onclick="ToggleSidebar"
+                            class="absolute bottom-4 left-0 right-0 mx-auto w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-full relative group">
+                        
+                        <svg class="w-4 h-4 transform group-hover:rotate-90 transition-all duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l7-7-7-7" />
+                        </svg>
+                        <span class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 text-xs text-white bg-black rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            Expand
+                        </span>
+                    </button>
+                }
+
+            </div>
+            @if (IsCollapsed)
+            {
+                <div class="flex items-center gap-4">
+                    <button class="hover:bg-gray-100 py-1 rounded-lg text-sm">Hi, Collo!</button>
+                    
+                </div>
+                <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
+                    <img src="https://avatars.dicebear.com/api/initials/John%20Doe.svg"
+                         alt="User avatar"
+                         onerror="this.src='/api/placeholder/32/32'"
+                         class="w-full h-full rounded-full" />
+                </div>
+            }
+        </div>
+        
+    </div>
+   
+</div>
+
+@code {
+    private bool IsCollapsed { get; set; } = false;
+
+
+    private void ToggleSidebar()
+    {
+        if (IsCollapsed)
+        {
+            IsCollapsed = false;
+        }
+        else if (!IsCollapsed)
+        {
+            IsCollapsed = true;
+        }
+    }
+}
